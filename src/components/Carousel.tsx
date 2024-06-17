@@ -2,6 +2,7 @@ import { Heading } from "./Heading.tsx";
 import { clsx } from "clsx";
 import { useState, useRef, useEffect } from "react";
 import {Pause, Play} from "lucide-react";
+import {Button} from "./Button.tsx";
 
 export const Slide = ({ title, desc, image, className }: { title: string, desc: string, image: string, className?: string }) => {
     return (
@@ -58,30 +59,33 @@ export const Carousel = ({ slides }: { slides: { title: string, desc: string, im
 
     return (
         <div className="relative overflow-hidden w-full h-full pb-48">
-            <div className="absolute right-0 flex bottom-12 justify-center items-center space-x-2">
-                <button type="button" role="button" className="bg-custom-cartier text-white py-3 px-3"
-                        onClick={togglePlayPause}>
-                    {isPlaying ? <Pause /> : <Play />}
-                </button>
+            <div className="absolute right-2 flex bottom-12 justify-center items-center space-x-2">
                 {slides.map((_, index) => (
                     <button
+                        tabIndex={1}
                         key={index}
                         className={clsx(
-                            "relative h-4 w-12 flex items-center justify-center border-2 border-custom-cartier",
+                            "relative h-4 w-12 flex items-center justify-center border-2 border-custom-cartier focus:outline-custom-cartier focus:outline-offset-4",
                         )}
                         onClick={() => goToSlide(index)}
                     >
                         <div
                             className={clsx("absolute left-0 top-0 h-full transition bg-custom-cartier hover:bg-custom-dark-cartier", currentSlide === index ? "transition-all duration-100" : "")}
-                            style={{ width: currentSlide === index ? `${progress}%` : '100%' }}
+                            style={{width: currentSlide === index ? `${progress}%` : '100%'}}
                         ></div>
                     </button>
                 ))}
+                <button type="button" role="button"
+                        className="unset-all focus:outline-custom-cartier focus:outline-offset-4"
+                        tabIndex={1}
+                        onClick={togglePlayPause}>
+                    {isPlaying ? <Pause className="text-custom-dark-cartier"/> : <Play className="text-custom-dark-cartier"/>}
+                </button>
             </div>
             <div ref={slideRef} className="flex overflow-x-hidden snap-x snap-mandatory h-full w-full">
                 {slides.map((slide, index) => (
                     <div key={index} className="flex-shrink-0 w-full h-full snap-center">
-                        <Slide title={slide.title} desc={slide.desc} image={slide.image} className="w-full h-full flex flex-col items-start" />
+                    <Slide title={slide.title} desc={slide.desc} image={slide.image} className="w-full h-full flex flex-col items-start" />
                     </div>
                 ))}
             </div>

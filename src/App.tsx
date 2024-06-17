@@ -5,8 +5,8 @@ import {Home} from "./pages/home.page.tsx";
 export const App = () => {
   return (
     <>
-        <Header/>
         <Router>
+            <Header/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
             </Routes>
