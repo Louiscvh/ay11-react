@@ -2,6 +2,8 @@ import {Heading} from "../components/Heading.tsx";
 import {SectionHeading} from "../components/SectionHeading.tsx";
 import {Carousel} from "../components/Carousel.tsx";
 import {homeData} from "../data/home.data.ts";
+import {booksData} from "../data/book.data.ts";
+import {BookPreviewCard} from "../components/BookPreviewCard.tsx";
 
 export const Home = () => {
     return (
@@ -26,7 +28,20 @@ export const Home = () => {
             </section>
             <div className="h-[2px] w-full bg-custom-grey"/>
             <section>
-                <SectionHeading title="A la une" desc="Les actualités" className="my-12"/>
+               <div className='flex justify-between items-center'>
+                   <SectionHeading title="Les nouveautés" desc="À découvrir" className="my-12"/>
+                   <button type="submit" role="button"
+                           className="bg-custom-dark-cartier font-bold text-white py-3 px-6">
+                       Voir toutes les nouveautés
+                   </button>
+               </div>
+                <ul className='flex flex-wrap gap-8'>
+                    {booksData.books.map((book, index) => (
+                        <li key={index} className="flex gap-4">
+                            <BookPreviewCard title={book.title} author={book.author} cover={book.cover}/>
+                        </li>
+                    ))}
+                </ul>
             </section>
         </main>
     )

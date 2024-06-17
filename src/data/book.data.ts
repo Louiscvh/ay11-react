@@ -39,7 +39,7 @@ export const booksData: BooksData = {
         avgNote: 4.2,
         reviewNumber: 17,
       },
-      cover: "/images/chaperon-rouge.jpg",
+      cover: "/images/chaperon-serra.jpg",
       library: [
         {
           name: "Bibliothèque la Canopée",
