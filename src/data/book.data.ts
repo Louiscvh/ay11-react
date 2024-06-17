@@ -1,31 +1,7 @@
-type BookData = {
-  title: string;
-  resume: string;
-  author: string;
-  editor: string;
-  date: string;
-  language: string;
-  genre: string;
-  isbn: string;
-  review: {
-    avgNote: number;
-    reviewNumber: number;
-  };
-  cover: string;
-  library: {
-    name: string;
-    numberAvailable: number;
-    location: string;
-  }[];
-};
-
-type BooksData = {
-  books: BookData[];
-};
-
 export const booksData: BooksData = {
   books: [
     {
+      id: 1,
       title: "CHAPERON ROUGE - Danijel Žeželj",
       resume:
         "Le chaperon rouge est un conte populaire européen. Il est surtout connu par le biais de deux versions : celle de Charles Perrault et celle des frères Grimm. Il est notamment caractérisé par sa morale, qui est souvent interprétée comme une mise en garde contre les dangers de la séduction.",
@@ -39,7 +15,7 @@ export const booksData: BooksData = {
         avgNote: 4.2,
         reviewNumber: 17,
       },
-      cover: "/images/chaperon-serra.jpg",
+      cover: "/images/chaperon.jpg",
       library: [
         {
           name: "Bibliothèque la Canopée",
@@ -59,6 +35,7 @@ export const booksData: BooksData = {
       ],
     },
     {
+      id: 2,
       title: "CHAPERON ROUGE",
       resume:
         "Le chaperon rouge est un conte populaire européen. Il est surtout connu par le biais de deux versions : celle de Charles Perrault et celle des frères Grimm. Il est notamment caractérisé par sa morale, qui est souvent interprétée comme une mise en garde contre les dangers de la séduction.",
@@ -87,6 +64,7 @@ export const booksData: BooksData = {
       ],
     },
     {
+      id: 3,
       title: "CHAPERON ROUGE",
       resume:
         "Le chaperon rouge est un conte populaire européen. Il est surtout connu par le biais de deux versions : celle de Charles Perrault et celle des frères Grimm. Il est notamment caractérisé par sa morale, qui est souvent interprétée comme une mise en garde contre les dangers de la séduction.",
