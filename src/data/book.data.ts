@@ -109,5 +109,33 @@ export const booksData: BooksData = {
         },
       ],
     },
+    {
+      title: "CHAPERON ROUGE",
+      resume:
+          "Le chaperon rouge est un conte populaire européen. Il est surtout connu par le biais de deux versions : celle de Charles Perrault et celle des frères Grimm. Il est notamment caractérisé par sa morale, qui est souvent interprétée comme une mise en garde contre les dangers de la séduction.",
+      author: "Adolfo Serra",
+      editor: "Actes Sud Junior",
+      date: "2012",
+      language: "Français",
+      genre: "Fiction",
+      isbn: "978-2-35283-290-1",
+      review: {
+        avgNote: 4.2,
+        reviewNumber: 17,
+      },
+      cover: "/images/chaperon-serra.jpg",
+      library: [
+        {
+          name: "Bibliothèque la Canopée",
+          numberAvailable: 3,
+          location: "Niveau 2 Jeunesse",
+        },
+        {
+          name: "Bibliothèque Violette Leduc",
+          numberAvailable: 3,
+          location: "Niveau 2 Jeunesse",
+        },
+      ],
+    },
   ],
 };
