@@ -1,7 +1,7 @@
-import {clsx} from "clsx";
-import {ReactNode} from "react";
+import { clsx } from "clsx";
+import { ReactNode } from "react";
 
-export const Button = ({children, variant, className, onClick, role, type = "button"}: {children: ReactNode, variant?: "primary" | "secondary" | "ghost" , className?: string, onClick?: () => void, role?: string, type?: "button" | "submit" | "reset"}) => {
+export const Button = ({ children, variant, className, onClick, role, type = "button" }: { children: ReactNode, variant?: "primary" | "secondary" | "ghost", className?: string, onClick?: () => void, role?: string, type?: "button" | "submit" | "reset" }) => {
 
     const buttonVariants = {
         primary: "bg-custom-cartier text-white",
