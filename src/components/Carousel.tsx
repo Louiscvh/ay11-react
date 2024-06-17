@@ -23,7 +23,8 @@ export const Carousel = ({ slides }: { slides: { title: string, desc: string, im
 
     const goToSlide = (index: number) => {
         setCurrentSlide(index);
-        setProgress(0);
+        //Easing to 0
+       setProgress(0)
     };
 
     const togglePlayPause = () => {
@@ -66,12 +67,12 @@ export const Carousel = ({ slides }: { slides: { title: string, desc: string, im
                     <button
                         key={index}
                         className={clsx(
-                            "relative h-4 w-12 flex items-center justify-center",
+                            "relative h-4 w-12 flex items-center justify-center border-2 border-custom-cartier",
                         )}
                         onClick={() => goToSlide(index)}
                     >
                         <div
-                            className={clsx("absolute left-0 top-0 h-full bg-custom-cartier", currentSlide === index ? "transition-all duration-100" : "")}
+                            className={clsx("absolute left-0 top-0 h-full transition bg-custom-cartier hover:bg-custom-dark-cartier", currentSlide === index ? "transition-all duration-100" : "")}
                             style={{ width: currentSlide === index ? `${progress}%` : '100%' }}
                         ></div>
                     </button>
