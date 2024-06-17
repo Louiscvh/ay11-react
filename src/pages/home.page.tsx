@@ -7,6 +7,7 @@ import {BookPreviewCard} from "../components/BookPreviewCard.tsx";
 import {Button} from "../components/Button.tsx";
 import {EventsCard} from "../components/EventsCard.tsx";
 import {eventData} from "../data/event.data.ts";
+import {Search} from "lucide-react";
 
 export const Home = () => {
     return (
@@ -14,10 +15,13 @@ export const Home = () => {
             <section className="container mx-auto relative flex flex-col gap-4">
                 <Heading type="h2">Recherche</Heading>
                 <form className="flex gap-4 relative z-10">
-                    <input
-                        className="bg-[#F2F2F2] w-full p-3 border-[1px] border-[#0F172A] focus:outline-custom-cartier focus:outline-offset-4"
-                        type="text"
-                        placeholder="Rechercher un livre, un article, une revue, un film ..." tabIndex={1}/>
+                    <div className="relative w-full">
+                        <Search className="absolute left-4 top-[calc(50%-0px)] -translate-y-[50%]" />
+                        <input
+                            className="bg-[#F2F2F2] w-full  pl-12 p-3 border-[1px] border-[#0F172A] focus:outline-custom-cartier focus:outline-offset-4"
+                            type="text"
+                            placeholder="Rechercher un livre, un article, une revue, un film ..." tabIndex={1}/>
+                    </div>
                     <Button>
                         Rechercher
                     </Button>
@@ -86,10 +90,14 @@ export const Home = () => {
                         <div className='flex flex-col gap-2'>
                             <Heading type="h5">Rechercher une bibliothèque dans la liste</Heading>
                             <form className="flex gap-4 relative z-10">
-                                <input
-                                    className="bg-[#F2F2F2] w-full p-3 border-[1px] border-[#0F172A] focus:outline-custom-cartier focus:outline-offset-4"
-                                    type="text"
-                                    placeholder="Exemple : Bibliothèque Georges Pompidou" tabIndex={1}/>
+                                <div className="relative w-full">
+                                    <Search className="absolute left-4 top-[calc(50%-0px)] -translate-y-[50%]"/>
+                                    <input
+                                        className="bg-[#F2F2F2] w-full  pl-12 p-3 border-[1px] border-[#0F172A] focus:outline-custom-cartier focus:outline-offset-4"
+                                        type="text"
+                                        placeholder="Exemple : Bibliothèque Georges Pompidou"
+                                        tabIndex={1}/>
+                                </div>
                                 <Button>
                                     Rechercher
                                 </Button>
@@ -97,7 +105,8 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className="w-1/3">
-                        <img src={"/images/background-logo.svg"} alt="Background logo pour la section horaires" className="size-72"/>
+                        <img src={"/images/background-logo.svg"} alt="Background logo pour la section horaires"
+                             className="size-72"/>
                     </div>
                 </div>
             </section>
