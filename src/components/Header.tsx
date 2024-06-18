@@ -1,16 +1,24 @@
 import {headerData} from "../data/header.data.ts";
 import {useState} from "react";
 import {clsx} from "clsx";
-import {Clock, Heart, User} from "lucide-react";
+import {Clock, Heart, Menu, User} from "lucide-react";
 import {Button} from "./Button.tsx";
 import {Link} from "react-router-dom";
+import {Heading} from "./Heading.tsx";
 
 export const Header = () => {
     const [selectedLang, setSelectedLang] = useState<string>("FR")
-
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
     return (
-        <header className="bg-custom-pink py-4 md:px-16 px-4 relative z-10">
-            <div className="flex flex-col gap-4">
+        <header className="bg-custom-pink m:py-4 relative z-30">
+            <div
+                className={clsx(isMenuOpen ? "translate-x-[0%]" : 'translate-x-[100%]', "transition h-screen p-4 w-screen bg-white absolute top-0 left-0 z-20")}>
+                <div className="flex justify-between items-center w-full">
+                    <Heading type="h3" className="uppercase">Langues</Heading>
+                    <Menu className="md:hidden" onClick={() => setIsMenuOpen((prev) => !prev)}/>
+                </div>
+            </div>
+            <div className="flex flex-col gap-4 md:px-16 px-4">
                 <div className="justify-between items-center flex-row md:flex-row hidden md:flex">
                     <ul className="flex flex-col md:flex-row gap-8">
                         {headerData.languages.map((lang, index) => (
@@ -43,9 +51,12 @@ export const Header = () => {
                     </nav>
                 </div>
                 <div className='flex justify-between items-start flex-col md:flex-row overflow-hidden'>
-                    <Link to="/">
-                        <img src="/images/logo-biblio.png" alt="Logo de la bibiliothèque de Paris" className="h-16"/>
-                    </Link>
+                    <div className="flex justify-between items-center w-full">
+                        <Link to="/" tabIndex={1}>
+                            <img src="/images/logo-biblio.png" alt="Logo de la bibiliothèque de Paris" className="h-16"/>
+                        </Link>
+                        <Menu className="md:hidden focus:outline-custom-cartier focus:outline-offset-4" onClick={() => setIsMenuOpen((prev) => !prev)} tabIndex={1}/>
+                    </div>
                     <nav className='overflow-auto w-full md:w-fit'>
                         <ul className="flex items-center gap-2">
                             {headerData.links.map((link, index) => (
