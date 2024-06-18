@@ -7,15 +7,27 @@ import {Link} from "react-router-dom";
 import {Heading} from "./Heading.tsx";
 
 export const Header = () => {
+
     const [selectedLang, setSelectedLang] = useState<string>("FR")
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+
     return (
         <header className="bg-custom-pink m:py-4 relative z-30">
             <div
-                className={clsx(isMenuOpen ? "translate-x-[0%]" : 'translate-x-[100%]', "transition h-screen p-4 w-screen bg-white absolute top-0 left-0 z-20")}>
-                <div className="flex justify-between items-center w-full">
-                    <Heading type="h3" className="uppercase">Langues</Heading>
-                    <Menu className="md:hidden" onClick={() => setIsMenuOpen((prev) => !prev)}/>
+                className={clsx(isMenuOpen ? "translate-x-[0%]" : 'translate-x-[100%]', "transition h-screen p-4 w-screen bg-white fixed top-0 left-0 z-20")}>
+                <Link to="/" tabIndex={1} className="cursor-pointer focus:outline-custom-cartier focus:outline-offset-4 md:hidden absolute right-4 top-5" onClick={() => setIsMenuOpen((prev) => !prev)}>
+                    <Menu />
+                </Link>
+                <div>
+                    <ul className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] flex flex-col gap-2">
+                        {headerData.links.map((link, index) => (
+                            <li key={index}>
+                                <Link to="/" onClick={() => setIsMenuOpen(false)} className="p-3 hover:bg-custom-cartier text-center hover:text-white transition hover:underline cursor-pointer focus:outline-custom-cartier" tabIndex={1}>
+                                    <Heading>{link.text}</Heading>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
             <div className="flex flex-col gap-4 md:px-16 px-4">
@@ -51,11 +63,13 @@ export const Header = () => {
                     </nav>
                 </div>
                 <div className='flex justify-between items-start flex-col md:flex-row overflow-hidden'>
-                    <div className="flex justify-between items-center w-full">
+                    <div className="flex justify-between items-center w-full md:w-fit">
                         <Link to="/" tabIndex={1}>
                             <img src="/images/logo-biblio.png" alt="Logo de la bibiliothèque de Paris" className="h-16"/>
                         </Link>
-                        <Menu className="md:hidden focus:outline-custom-cartier focus:outline-offset-4" onClick={() => setIsMenuOpen((prev) => !prev)} tabIndex={1}/>
+                        <Link to="/" className="focus:outline-custom-cartier focus:outline-offset-4" tabIndex={1} onClick={() => setIsMenuOpen((prev) => !prev)}>
+                            <Menu className="md:hidden " />
+                        </Link>
                     </div>
                     <nav className='overflow-auto w-full md:w-fit'>
                         <ul className="flex items-center gap-2">
