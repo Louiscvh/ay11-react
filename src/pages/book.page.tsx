@@ -35,7 +35,7 @@ export const Book = () => {
                     {!bookData?.cover ? (
                         <Heading>Le livre n'a pas de couverture, veuilez nous excusez pour le dérangement</Heading>
                     ) : (
-                        <img src={bookData.cover} alt={bookData.title} className="w-full border" />
+                        <img src={bookData.cover} alt={bookData.title} className="border-4 transition hover:-translate-y-2 shadow-[0px_2px_4px_0px_rgba(0,0,0,0.2)] w-full object-cover mb-2" />
                     )}
                 </div>
                 <div className="flex flex-col gap-y-4">
