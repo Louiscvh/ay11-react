@@ -81,7 +81,7 @@ export const Carousel = ({ slides }: { slides: { title: string, desc: string, im
                         className="unset-all focus:outline-custom-cartier focus:outline-offset-4"
                         tabIndex={1}
                         onClick={togglePlayPause}>
-                    <img src={`/images/${isPlaying ? "play.svg" : "pause.svg"}`} alt="Play icon pour le carousel" className="size-5"/>
+                    <img src={`/images/${!isPlaying ? "play.svg" : "pause.svg"}`} alt="Play icon pour le carousel" className="size-5"/>
                 </button>
             </div>
             <div ref={slideRef} className="flex overflow-x-hidden snap-x snap-mandatory h-full w-full">
