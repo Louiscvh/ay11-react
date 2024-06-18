@@ -43,9 +43,9 @@ export const Home = () => {
                     </Button>
                 </div>
                 <ul className='grid grid-cols-1 md:grid-cols-4 flex-wrap gap-12 mt-8 md:mt-0'>
-                    {booksData.books.map(({title, author, cover, resume}, index) => (
+                    {booksData.books.map(({id, title, author, cover, resume}, index) => (
                         <li key={index} className="flex gap-4 col-span-1">
-                            <BookPreviewCard title={title} author={author} cover={cover} resume={resume}/>
+                            <BookPreviewCard id={id} title={title} author={author} cover={cover} resume={resume}/>
                         </li>
                     ))}
                 </ul>
@@ -60,9 +60,9 @@ export const Home = () => {
                         </Button>
                     </div>
                     <ul className='grid grid-cols-1 md:grid-cols-4 flex-wrap gap-12 mt-8 md:mt-0'>
-                        {booksData.books.map(({title, author, cover, resume}, index) => (
+                        {booksData.books.map(({id, title, author, cover, resume}, index) => (
                             <li key={index} className="flex gap-4 col-span-1">
-                                <BookPreviewCard title={title} author={author} cover={cover} resume={resume}/>
+                                <BookPreviewCard id={id} title={title} author={author} cover={cover} resume={resume}/>
                             </li>
                         ))}
                     </ul>
@@ -135,7 +135,7 @@ export const Home = () => {
                 <div className="w-full">
                     <SectionHeading title="L’original de la semaine" desc="les bibliothèques patrimoniales et spécialisées"/>
                     <div className="mt-24 flex flex-col gap-4 items-start">
-                        <Heading>Depuis 2004, les bibliothèques patrimoniales ont numérisé et mis en ligne environ  40 000 documents remarquables. Retrouvez-les en accès libre dans notre catalogue des collections patrimoniales et découvrez les originaux de la semaine.</Heading>
+                        <Heading>Depuis 2004, les bibliothèques patrimoniales ont numérisé et mis en ligne environ 40 000 documents remarquables. Retrouvez-les en accès libre dans notre catalogue des collections patrimoniales et découvrez les originaux de la semaine.</Heading>
                         <Button role="link" type="button" className="flex items-center justify-center gap-4 w-full md:w-fit">
                             Accéder aux collections patrimoniales
                             <SquareArrowOutUpRight />
