@@ -1,7 +1,6 @@
 import { Heading } from "./Heading.tsx";
 import { clsx } from "clsx";
 import { useState, useRef, useEffect } from "react";
-import {Pause, Play} from "lucide-react";
 
 export const Slide = ({ title, desc, image, date, className }: { title: string, desc: string, image: string, date: string, className?: string }) => {
     return (
@@ -82,7 +81,7 @@ export const Carousel = ({ slides }: { slides: { title: string, desc: string, im
                         className="unset-all focus:outline-custom-cartier focus:outline-offset-4"
                         tabIndex={1}
                         onClick={togglePlayPause}>
-                    {isPlaying ? <Pause className="text-custom-dark-cartier"/> : <Play className="text-custom-dark-cartier"/>}
+                    <img src={`/images/${isPlaying ? "play.svg" : "pause.svg"}`} alt="Play icon pour le carousel" className="size-5"/>
                 </button>
             </div>
             <div ref={slideRef} className="flex overflow-x-hidden snap-x snap-mandatory h-full w-full">
