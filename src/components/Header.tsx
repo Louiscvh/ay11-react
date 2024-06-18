@@ -18,11 +18,22 @@ export const Header = () => {
                 <Link to="/" tabIndex={1} className="cursor-pointer focus:outline-custom-cartier focus:outline-offset-4 md:hidden absolute right-4 top-5" onClick={() => setIsMenuOpen((prev) => !prev)}>
                     <Menu />
                 </Link>
-                <div>
-                    <ul className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] flex flex-col gap-0">
+                <div className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] flex flex-col items-center">
+                    <ul className="flex md:flex-row gap-8">
+                        {headerData.languages.map((lang, index) => (
+                            <li key={index} onClick={() => setSelectedLang(lang)}
+                                className={clsx("cursor-pointer", selectedLang === lang && "font-bold relative before:absolute before:-bottom-2 before:w-full before:h-[5px] before:bg-custom-cartier")}>
+                                {lang}
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="container mx-auto h-[2px] w-full bg-custom-grey my-8"/>
+                    <ul className="flex flex-col gap-0">
                         {headerData.links.map((link, index) => (
                             <li key={index}>
-                                <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-center hover:text-white hover:underline cursor-pointer focus:outline-custom-cartier" tabIndex={1}>
+                                <Link to="/" onClick={() => setIsMenuOpen(false)}
+                                      className="text-center hover:text-white hover:underline cursor-pointer focus:outline-custom-cartier"
+                                      tabIndex={1}>
                                     <Heading className="p-3 hover:bg-custom-cartier transition">{link.text}</Heading>
                                 </Link>
                             </li>
@@ -34,7 +45,8 @@ export const Header = () => {
                 <div className="justify-between items-center flex-row md:flex-row hidden md:flex md:gap-12">
                     <ul className="flex flex-col md:flex-row gap-8">
                         {headerData.languages.map((lang, index) => (
-                            <li key={index} onClick={() => setSelectedLang(lang)} className={clsx("cursor-pointer", selectedLang === lang && "font-bold relative before:absolute before:-bottom-2 before:w-full before:h-[5px] before:bg-custom-cartier")}>
+                            <li key={index} onClick={() => setSelectedLang(lang)}
+                                className={clsx("cursor-pointer", selectedLang === lang && "font-bold relative before:absolute before:-bottom-2 before:w-full before:h-[5px] before:bg-custom-cartier")}>
                                 {lang}
                             </li>
                         ))}
