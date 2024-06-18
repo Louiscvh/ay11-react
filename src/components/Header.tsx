@@ -31,7 +31,7 @@ export const Header = () => {
                 </div>
             </div>
             <div className="flex flex-col gap-4 md:px-16 px-4">
-                <div className="justify-between items-center flex-row md:flex-row hidden md:flex">
+                <div className="justify-between items-center flex-row md:flex-row hidden md:flex md:gap-12">
                     <ul className="flex flex-col md:flex-row gap-8">
                         {headerData.languages.map((lang, index) => (
                             <li key={index} onClick={() => setSelectedLang(lang)} className={clsx("cursor-pointer", selectedLang === lang && "font-bold relative before:absolute before:-bottom-2 before:w-full before:h-[5px] before:bg-custom-cartier")}>
@@ -62,10 +62,10 @@ export const Header = () => {
                         </ul>
                     </nav>
                 </div>
-                <div className='flex justify-between items-start flex-col md:flex-row overflow-hidden'>
+                <div className='flex justify-between items-start flex-col lg:gap-12 lg:flex-row overflow-hidden'>
                     <div className="flex justify-between items-center w-full md:w-fit">
                         <Link to="/" tabIndex={1}>
-                            <img src="/images/logo-biblio.png" alt="Logo de la bibiliothèque de Paris" className="h-16"/>
+                            <img src="/images/logo-biblio.png" alt="Logo de la bibiliothèque de Paris" className="h-16 object-contain"/>
                         </Link>
                         <Link to="/" className="focus:outline-custom-cartier focus:outline-offset-4" tabIndex={1} onClick={() => setIsMenuOpen((prev) => !prev)}>
                             <Menu className="md:hidden " />
@@ -74,7 +74,7 @@ export const Header = () => {
                     <nav className='overflow-auto w-full md:w-fit'>
                         <ul className="flex items-center gap-2">
                             {headerData.links.map((link, index) => (
-                                <li key={index} className="p-3 hover:bg-custom-cartier hover:text-white transition hover:underline cursor-pointer focus:outline-custom-cartier" tabIndex={1}>{link.text}</li>
+                                <li key={index} className="p-3 hover:bg-custom-cartier hover:text-white text-center transition hover:underline cursor-pointer focus:outline-custom-cartier" tabIndex={1}>{link.text}</li>
                             ))}
                         </ul>
                     </nav>
