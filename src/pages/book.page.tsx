@@ -1,4 +1,4 @@
-import { LucideDownload, LucideHeart, LucideShare } from "lucide-react"
+import {LucideDownload, LucideHeart, LucideShare, Play} from "lucide-react"
 import { SectionHeading } from "../components/SectionHeading"
 import { booksData } from "../data/book.data"
 import { useNavigate, useParams } from "react-router-dom"
@@ -41,6 +41,17 @@ export const Book = () => {
                     )}
                 </div>
                 <div className="flex flex-col gap-y-4">
+                    <div className='flex justify-between items-center gap-8'>
+                        <Heading className="text-custom-cartier font-semibold">#BD</Heading>
+                        <div className="flex items-center gap-4">
+                            <Heading>Lecture de la description</Heading>
+                            <Button className="w-fit !p-2">
+                                <div className="flex gap-4">
+                                    <Play />
+                                </div>
+                            </Button>
+                        </div>
+                    </div>
                     <div>
                         <Heading type="key" >Résumé</Heading>
                         {!bookData?.resume ? (
