@@ -30,18 +30,18 @@ export const Book = () => {
                 <nav aria-label="breadcrumb">
                     <ol className="flex gap-4 relative z-30">
                         <li>
-                            <Link to="/">
+                            <Link to="/" tabIndex={1}>
                                 <button aria-label="Accueil">ACCUEIL</button>
                             </Link>
                         </li>
                         <li aria-current="page" className="flex items-center gap-4">
                             <Heading>{'>'}</Heading>
                             {search ? (
-                                <Link to={`/search?search=${search}`}>
+                                <Link to={`/search?search=${search}`} tabIndex={1}>
                                     <button className="font-semibold" aria-label={`Recherche : ${search.toUpperCase()}`}>RECHERCHE : {search.toUpperCase()}</button>
                                 </Link>
                             ) : (
-                                <Link to={`/books/${id}`}>
+                                <Link to={`/books/${id}`} tabIndex={1}>
                                     <button className="font-semibold" aria-label={bookData?.title.toUpperCase()}>{bookData?.title.toUpperCase()}</button>
                                 </Link>
                             )}
@@ -115,18 +115,18 @@ export const Book = () => {
             </section>
             <section className="my-16">
                 <SectionHeading3 title="Dans quelle bibliothèque retrouver le livre ?" />
-                <div className="my-4 mx-auto gap-12 flex flex-col lg:grid grid-cols-3 ">
+                <ul className="my-4 mx-auto gap-12 flex flex-col lg:grid grid-cols-3 ">
                     {bookData?.library.sort((a, b) => b.numberAvailable - a.numberAvailable).map((library, index) => (
-                        <div key={index}>
+                        <li key={index}>
                             <LibraryCard
                                 name={library.name}
                                 address={library.address}
                                 numberAvailable={library.numberAvailable}
                                 location={library.location}
                             />
-                        </div>
+                        </li>
                     ))}
-                </div>
+                </ul>
             </section>
             <section className="my-16">
                 <SectionHeading3 title="Comment se procurer cette référence ?" />

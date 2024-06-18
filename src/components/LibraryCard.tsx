@@ -22,7 +22,7 @@ export const LibraryCard = ({ name, address, numberAvailable, location, classNam
                 <div className="mt-2 gap-1 flex flex-col">
                     {available()}
                     <Heading>{location}</Heading>
-                    <Link to="/connexion" tabIndex={0}>
+                    <Link to="/connexion">
                         <Button disabled={numberAvailable === 0} className="w-fit p-4">Réserver</Button>
                     </Link>
                 </div>
