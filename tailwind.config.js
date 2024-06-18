@@ -12,7 +12,8 @@ export default {
       "custom-dark-cartier": "#5A112D",
       "custom-dark-blue": "#0F172A",
       "custom-green": "#298221",
-      "white": "#FFFFFF"
+      "white": "#FFFFFF",
+      "black": "#000000"
     },
     fontFamily: {
       "georgia": ["Georgia", "sans-serif"],

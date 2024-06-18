@@ -2,21 +2,24 @@ import { Heading } from "./Heading.tsx";
 import { clsx } from "clsx";
 import { useState, useRef, useEffect } from "react";
 import {Pause, Play} from "lucide-react";
-import {Button} from "./Button.tsx";
 
-export const Slide = ({ title, desc, image, className }: { title: string, desc: string, image: string, className?: string }) => {
+export const Slide = ({ title, desc, image, date, className }: { title: string, desc: string, image: string, date: string, className?: string }) => {
     return (
         <div className={clsx("flex flex-col gap-4", className)}>
             <img src={image} alt={title} className="w-full h-[500px] object-cover" />
-            <div className="w-1/2 flex flex-col gap-4">
-                <Heading type="h3">{title}</Heading>
-                <Heading type="p">{desc}</Heading>
+            <div className="md:w-1/2 flex flex-col gap-4">
+                <Heading className="text-custom-cartier font-medium">#ÉVENEMENT</Heading>
+                <div>
+                    <Heading type="h3">{title}</Heading>
+                    <Heading className="text-custom-cartier font-semibold">{date}</Heading>
+                </div>
+                <Heading className="md:w-2/3">{desc}</Heading>
             </div>
         </div>
     );
 };
 
-export const Carousel = ({ slides }: { slides: { title: string, desc: string, image: string }[] }) => {
+export const Carousel = ({ slides }: { slides: { title: string, desc: string, image: string, date: string }[] }) => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
     const [progress, setProgress] = useState<number>(0);
     const [isPlaying, setIsPlaying] = useState<boolean>(true);
@@ -58,8 +61,8 @@ export const Carousel = ({ slides }: { slides: { title: string, desc: string, im
     }, [currentSlide]);
 
     return (
-        <div className="relative overflow-hidden w-full h-full pb-48">
-            <div className="absolute right-2 flex bottom-12 justify-center items-center space-x-2">
+        <div className="relative overflow-hidden w-full h-full pb-32">
+            <div className="absolute right-2 flex bottom-16 justify-center items-center space-x-2">
                 {slides.map((_, index) => (
                     <button
                         tabIndex={1}
@@ -85,7 +88,7 @@ export const Carousel = ({ slides }: { slides: { title: string, desc: string, im
             <div ref={slideRef} className="flex overflow-x-hidden snap-x snap-mandatory h-full w-full">
                 {slides.map((slide, index) => (
                     <div key={index} className="flex-shrink-0 w-full h-full snap-center">
-                    <Slide title={slide.title} desc={slide.desc} image={slide.image} className="w-full h-full flex flex-col items-start" />
+                        <Slide title={slide.title} desc={slide.desc} image={slide.image} date={slide.date} className="w-full h-full flex flex-col items-start" />
                     </div>
                 ))}
             </div>
