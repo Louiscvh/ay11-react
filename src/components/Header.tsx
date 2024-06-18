@@ -74,7 +74,7 @@ export const Header = () => {
                         </ul>
                     </nav>
                 </div>
-                <div className='flex justify-between items-start flex-col lg:gap-12 lg:flex-row overflow-hidden'>
+                <div className='flex justify-between items-start lg:items-center flex-col lg:gap-12 lg:flex-row overflow-hidden'>
                     <div className="flex justify-between items-center w-full md:w-fit">
                         <Link to="/" tabIndex={1}>
                             <img src="/images/logo-biblio.png" alt="Logo de la bibiliothèque de Paris" className="h-16 object-contain"/>
