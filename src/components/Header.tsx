@@ -19,11 +19,11 @@ export const Header = () => {
                     <Menu />
                 </Link>
                 <div>
-                    <ul className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] flex flex-col gap-2">
+                    <ul className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] flex flex-col gap-0">
                         {headerData.links.map((link, index) => (
                             <li key={index}>
-                                <Link to="/" onClick={() => setIsMenuOpen(false)} className="p-3 hover:bg-custom-cartier text-center hover:text-white transition hover:underline cursor-pointer focus:outline-custom-cartier" tabIndex={1}>
-                                    <Heading>{link.text}</Heading>
+                                <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-center hover:text-white hover:underline cursor-pointer focus:outline-custom-cartier" tabIndex={1}>
+                                    <Heading className="p-3 hover:bg-custom-cartier transition">{link.text}</Heading>
                                 </Link>
                             </li>
                         ))}

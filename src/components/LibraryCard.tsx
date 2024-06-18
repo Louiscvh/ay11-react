@@ -15,14 +15,14 @@ export const LibraryCard = ({ name, address, numberAvailable, location, classNam
     }
 
     return (
-        <div className={clsx(className, "w-full focus:outline-2 transition hover:-translate-y-2 outline-[rgba(0,0,0,0)] focus:outline-custom-cartier focus:outline-offset-8 p-4 shadow-[0px_2px_4px_0px_rgba(0,0,0,0.2)]")} tabIndex={1}>
+        <div className={clsx(className, "w-full focus:outline-2 transition hover:-translate-y-2 outline-[rgba(0,0,0,0)] focus:outline-custom-cartier focus:outline-offset-8 p-4 shadow-[0px_2px_4px_0px_rgba(0,0,0,0.2)]")}>
             <div className="flex gap-1 flex-col justify-between h-52">
                 <Heading type="h4" className='mt-2'>{name}</Heading>
                 <Heading>{address}</Heading>
                 <div className="mt-2 gap-1 flex flex-col">
                     {available()}
                     <Heading>{location}</Heading>
-                    <Link to="/connexion">
+                    <Link to="/connexion" tabIndex={0}>
                         <Button className="w-fit p-4">Réserver</Button>
                     </Link>
                 </div>

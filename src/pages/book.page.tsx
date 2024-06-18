@@ -7,6 +7,7 @@ import { Button } from "../components/Button"
 import { SectionHeading3 } from "../components/SectionHeading3"
 import { LibraryCard } from "../components/LibraryCard"
 import { ReferenceCard } from "../components/ReferenceCard"
+import {useEffect} from "react";
 
 
 export const Book = () => {
@@ -17,6 +18,11 @@ export const Book = () => {
     const errorMissingData = "Cette donnée est manquante, veuillez nous excuser pour le dérangement"
 
     if (!bookData) navigate('/')
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+
+    }, [])
 
     return (
         <main className="container m-auto px-4 mt-16">
@@ -91,7 +97,7 @@ export const Book = () => {
             <section className="my-16">
                 <SectionHeading3 title="Dans quelle bibliothèque retrouver le livre ?" />
                 <div className="my-4 mx-auto gap-12 flex flex-col lg:grid grid-cols-3 ">
-                    {bookData?.library.map((library) => (
+                    {bookData?.library.sort((a, b) => b.numberAvailable - a.numberAvailable).map((library) => (
                         <div key={bookData.id}>
                             <LibraryCard
                                 name={library.name}
