@@ -23,7 +23,7 @@ export const LibraryCard = ({ name, address, numberAvailable, location, classNam
                     {available()}
                     <Heading>{location}</Heading>
                     <Link to="/connexion" tabIndex={0}>
-                        <Button className="w-fit p-4">Réserver</Button>
+                        <Button disabled={numberAvailable === 0} className="w-fit p-4">Réserver</Button>
                     </Link>
                 </div>
             </div>
