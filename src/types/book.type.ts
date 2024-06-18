@@ -15,6 +15,7 @@ type BookData = {
   cover: string;
   library: {
     name: string;
+    address: string;
     numberAvailable: number;
     location: string;
   }[];

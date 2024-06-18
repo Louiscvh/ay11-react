@@ -19,17 +19,20 @@ export const booksData: BooksData = {
       library: [
         {
           name: "Bibliothèque la Canopée",
-          numberAvailable: 3,
+          address: "10 Passage de la Canopée, 75001 Paris",
+          numberAvailable: 0,
           location: "Niveau 2 Jeunesse",
         },
         {
           name: "Bibliothèque Françoise Sagan",
+          address: "8 Rue Léon Schwartzenberg, 75010 Paris",
           numberAvailable: 2,
           location: "Niveau 2 Jeunesse",
         },
         {
           name: "Bibliothèque Violette Leduc",
-          numberAvailable: 3,
+          address: "170 Rue de Charonne, 75011 Paris",
+          numberAvailable: 1,
           location: "Niveau 2 Jeunesse",
         },
       ],
@@ -53,12 +56,14 @@ export const booksData: BooksData = {
       library: [
         {
           name: "Bibliothèque la Canopée",
+          address: "10 Passage de la Canopée, 75001 Paris",
           numberAvailable: 3,
           location: "Niveau 2 Jeunesse",
         },
         {
           name: "Bibliothèque Violette Leduc",
-          numberAvailable: 3,
+          address: "170 Rue de Charonne, 75011 Paris",
+          numberAvailable: 0,
           location: "Niveau 2 Jeunesse",
         },
       ],
@@ -82,12 +87,14 @@ export const booksData: BooksData = {
       library: [
         {
           name: "Bibliothèque BPI",
+          address: "25 Rue de la Bibliothèque, 75001 Paris",
           numberAvailable: 3,
           location: "Niveau 2 Jeunesse",
         },
       ],
     },
     {
+      id: 4,
       title: "CHAPERON ROUGE",
       resume:
           "Le chaperon rouge est un conte populaire européen. Il est surtout connu par le biais de deux versions : celle de Charles Perrault et celle des frères Grimm. Il est notamment caractérisé par sa morale, qui est souvent interprétée comme une mise en garde contre les dangers de la séduction.",
@@ -105,11 +112,13 @@ export const booksData: BooksData = {
       library: [
         {
           name: "Bibliothèque la Canopée",
+          address: "10 Passage de la Canopée, 75001 Paris",
           numberAvailable: 3,
           location: "Niveau 2 Jeunesse",
         },
         {
           name: "Bibliothèque Violette Leduc",
+          address: "170 Rue de Charonne, 75011 Paris",
           numberAvailable: 3,
           location: "Niveau 2 Jeunesse",
         },
