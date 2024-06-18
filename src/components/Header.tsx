@@ -7,10 +7,11 @@ import {Link} from "react-router-dom";
 
 export const Header = () => {
     const [selectedLang, setSelectedLang] = useState<string>("FR")
+
     return (
         <header className="bg-custom-pink py-4 md:px-16 px-4 relative z-10">
             <div className="flex flex-col gap-4">
-                <div className="flex justify-between items-center flex-row md:flex-row">
+                <div className="justify-between items-center flex-row md:flex-row hidden md:flex">
                     <ul className="flex flex-col md:flex-row gap-8">
                         {headerData.languages.map((lang, index) => (
                             <li key={index} onClick={() => setSelectedLang(lang)} className={clsx("cursor-pointer", selectedLang === lang && "font-bold relative before:absolute before:-bottom-2 before:w-full before:h-[5px] before:bg-custom-cartier")}>
@@ -19,15 +20,18 @@ export const Header = () => {
                         ))}
                     </ul>
                     <nav className="mt-6">
-                        <ul className="flex items-center gap-8 flex-col md:flex-row">
-                            <li className="flex items-center gap-2 focus:outline-custom-dark-blue focus:outline-offset-4" tabIndex={1}>
-                                <Heart />
-                                Ma sélection
+                        <ul className="flex items-center gap-6 flex-col md:flex-row">
+                            <li className="cursor-pointer hover:bg-custom-cartier hover:text-white transition hover:underline p-3 focus:outline-custom-dark-blue focus:outline-offset-4" tabIndex={1}>
+                                <Link to="/selection" className="flex items-center gap-2 ">
+                                    <Heart />
+                                    Ma sélection
+                                </Link>
                             </li>
-                            <li className="flex items-center gap-2 focus:outline-custom-dark-blue focus:outline-offset-4"
-                                tabIndex={1}>
-                                <Clock/>
-                                Mon historique
+                            <li className="cursor-pointer hover:bg-custom-cartier hover:text-white transition hover:underline p-3 focus:outline-custom-dark-blue focus:outline-offset-4" tabIndex={1}>
+                                <Link to="/historique" className="flex items-center gap-2 ">
+                                    <Clock/>
+                                    Mon historique
+                                </Link>
                             </li>
                             <li>
                                 <Button type="button" role="button" className="flex items-center gap-2 !bg-custom-dark-blue focus:outline-custom-dark-blue">
@@ -42,8 +46,8 @@ export const Header = () => {
                     <Link to="/">
                         <img src="/images/logo-biblio.png" alt="Logo de la bibiliothèque de Paris" className="h-16"/>
                     </Link>
-                    <nav className='overflow-auto'>
-                        <ul className="flex items-center">
+                    <nav className='overflow-auto w-full md:w-fit'>
+                        <ul className="flex items-center gap-2">
                             {headerData.links.map((link, index) => (
                                 <li key={index} className="p-3 hover:bg-custom-cartier hover:text-white transition hover:underline cursor-pointer focus:outline-custom-cartier" tabIndex={1}>{link.text}</li>
                             ))}
