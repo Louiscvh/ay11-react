@@ -36,7 +36,7 @@ export const Carousel = ({ slides }: { slides: { title: string, desc: string, im
     };
 
     useEffect(() => {
-        let interval: NodeJS.Timeout;
+        let interval: number;
         if (isPlaying) {
             interval = setInterval(() => {
                 setProgress((prev) => {
