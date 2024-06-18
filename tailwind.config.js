@@ -11,6 +11,7 @@ export default {
       "custom-cartier": "#AF2257",
       "custom-dark-cartier": "#5A112D",
       "custom-dark-blue": "#0F172A",
+      "custom-green": "#298221",
       "white": "#FFFFFF"
     },
     fontFamily: {
