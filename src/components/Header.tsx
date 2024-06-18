@@ -42,7 +42,7 @@ export const Header = () => {
                     <Link to="/">
                         <img src="/images/logo-biblio.png" alt="Logo de la bibiliothèque de Paris" className="h-16"/>
                     </Link>
-                    <nav className='overflow-scroll'>
+                    <nav className='overflow-auto'>
                         <ul className="flex items-center">
                         {headerData.links.map((link, index) => (
                                 <li key={index} className="p-3 cursor-pointer focus:outline-custom-cartier" tabIndex={1}>{link.text}</li>
