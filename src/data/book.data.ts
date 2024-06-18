@@ -2,10 +2,10 @@ export const booksData: BooksData = {
   books: [
     {
       id: 1,
-      title: "CHAPERON ROUGE - Danijel Žeželj",
+      title: "Le bonheur est dans le travail",
       resume:
-        "Le chaperon rouge est un conte populaire européen. Il est surtout connu par le biais de deux versions : celle de Charles Perrault et celle des frères Grimm. Il est notamment caractérisé par sa morale, qui est souvent interprétée comme une mise en garde contre les dangers de la séduction.",
-      author: "Danijel Žeželj",
+        "Ce livre du maître vietnamien de la pleine conscience se lit comme un manuel de ...",
+      author: "Thich Nhât Hanh",
       editor: "Mosquito",
       date: "2015",
       language: "Français",
@@ -15,7 +15,7 @@ export const booksData: BooksData = {
         avgNote: 4.2,
         reviewNumber: 17,
       },
-      cover: "/images/chaperon.jpg",
+      cover: "/images/book-10.png",
       library: [
         {
           name: "Bibliothèque la Canopée",
@@ -39,10 +39,10 @@ export const booksData: BooksData = {
     },
     {
       id: 2,
-      title: "CHAPERON ROUGE",
+      title: "Mon dîner avec Winston",
       resume:
-        "Le chaperon rouge est un conte populaire européen. Il est surtout connu par le biais de deux versions : celle de Charles Perrault et celle des frères Grimm. Il est notamment caractérisé par sa morale, qui est souvent interprétée comme une mise en garde contre les dangers de la séduction.",
-      author: "Adolfo Serra",
+        "Charles, un homme dépressif et alcoolique, attend pour le dîner son héros, le cé...",
+      author: "Hervé Le Tellier",
       editor: "Actes Sud Junior",
       date: "2012",
       language: "Français",
@@ -52,7 +52,7 @@ export const booksData: BooksData = {
         avgNote: 4.2,
         reviewNumber: 17,
       },
-      cover: "/images/chaperon-serra.jpg",
+      cover: "/images/book-11.png",
       library: [
         {
           name: "Bibliothèque la Canopée",
@@ -108,7 +108,7 @@ export const booksData: BooksData = {
         avgNote: 4.2,
         reviewNumber: 17,
       },
-      cover: "/images/chaperon-serra.jpg",
+      cover: "/images/book-12.png",
       library: [
         {
           name: "Bibliothèque la Canopée",
