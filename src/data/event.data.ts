@@ -7,21 +7,21 @@ export const eventData: EventDataType = {
             type: [EventTypeEnum.CONFERENCE],
             title: "Conférence sur le développement durable",
             place: "Bibliothèque Andrée Chedid - Paris 15e",
-            date: "2022-12-12"
+            date: "2022-01-24"
         },
         {
             id: 2,
             type: [EventTypeEnum.SCIENCES, EventTypeEnum.ATELIER],
             title: "Atelier sur l'astronomie",
             place: "Médiathèque Françoise Sagan - Paris 10e",
-            date: "2022-12-12"
+            date: "2023-05-12"
         },
         {
             id: 3,
             type: [EventTypeEnum.ATELIER],
             title: "Atelier de cuisine",
             place: "Bibliothèque François Villon - Paris 10e",
-            date: "2022-12-12"
+            date: "2024-12-12"
         },
     ],
 }
