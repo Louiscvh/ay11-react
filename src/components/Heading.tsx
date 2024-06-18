@@ -9,9 +9,9 @@ type HeadingProps = {
 }
 
 const defaultStyles = {
-    h1: "text-4xl md:text-6xl",
+    h1: "text-4xl md:text-6xl font-georgia",
     h2: "text-5xl font-normal font-georgia",
-    h3: "text-xl font-medium uppercase md:text-2xl",
+    h3: "text-xl font-medium md:text-2xl",
     h4: "text-xl font-medium",
     h5: "text-lg font-medium",
     h6: "text-base font-normal",

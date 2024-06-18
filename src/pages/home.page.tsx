@@ -8,18 +8,25 @@ import {Button} from "../components/Button.tsx";
 import {EventsCard} from "../components/EventsCard.tsx";
 import {eventData} from "../data/event.data.ts";
 import {CalendarClock, Search, SquareArrowOutUpRight} from "lucide-react";
+import {useNavigate} from "react-router-dom";
+import {useState} from "react";
 
 export const Home = () => {
+
+    const [search, setSearch] = useState<string>("")
+    const navigate = useNavigate()
+
     return (
         <main className="mt-16">
             <section className="container px-4 md:px-0 mx-auto relative flex flex-col gap-4">
                 <Heading type="h2">Recherche</Heading>
-                <form className="flex flex-col md:flex-row gap-4 relative z-10">
+                <form className="flex flex-col md:flex-row gap-4 relative z-10" onSubmit={() => navigate(`/search?search=${search}`)}>
                     <div className="relative w-full">
                         <Search className="absolute left-4 top-[calc(50%-0px)] -translate-y-[50%]" />
                         <input
                             className="bg-[#F2F2F2] w-full  pl-12 p-3 border-[1px] border-[#0F172A] focus:outline-custom-cartier focus:outline-offset-4"
                             type="text"
+                            onChange={(e) => setSearch(e.target.value)}
                             placeholder="Rechercher un livre, un article, une revue, un film ..." tabIndex={1}/>
                     </div>
                     <Button>
@@ -150,4 +157,4 @@ export const Home = () => {
             </section>
         </main>
     )
-}
+};
