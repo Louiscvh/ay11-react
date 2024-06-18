@@ -1,6 +1,7 @@
 import { Button } from "./Button.tsx";
 import { Heading } from "./Heading.tsx";
 import { clsx } from "clsx";
+import {Link} from "react-router-dom";
 
 export const LibraryCard = ({ name, address, numberAvailable, location, className }: { name: string, address: string, numberAvailable: number, location: string, className?: string }) => {
     const available = () => {
@@ -21,7 +22,9 @@ export const LibraryCard = ({ name, address, numberAvailable, location, classNam
                 <div className="mt-2 gap-1 flex flex-col">
                     {available()}
                     <Heading>{location}</Heading>
-                    <Button className="w-fit p-4">Réserver</Button>
+                    <Link to="/connexion">
+                        <Button className="w-fit p-4">Réserver</Button>
+                    </Link>
                 </div>
             </div>
         </div>
