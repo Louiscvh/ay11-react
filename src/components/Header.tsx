@@ -44,8 +44,8 @@ export const Header = () => {
                     </Link>
                     <nav className='overflow-auto'>
                         <ul className="flex items-center">
-                        {headerData.links.map((link, index) => (
-                                <li key={index} className="p-3 cursor-pointer focus:outline-custom-cartier" tabIndex={1}>{link.text}</li>
+                            {headerData.links.map((link, index) => (
+                                <li key={index} className="p-3 hover:bg-custom-cartier hover:text-white transition hover:underline cursor-pointer focus:outline-custom-cartier" tabIndex={1}>{link.text}</li>
                             ))}
                         </ul>
                     </nav>

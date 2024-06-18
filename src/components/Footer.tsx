@@ -24,7 +24,7 @@ export const Footer = () => {
                         <Heading type="h4">{footerData.footerLinks[0].category}</Heading>
                         <ul className='flex flex-col gap-1 mt-6'>
                             {footerData.footerLinks[0].links.map((link, index) => (
-                                <Link key={index} to={link.link} className="focus:outline-custom-cartier focus:outline-offset-2">
+                                <Link key={index} to={link.link} className="focus:outline-custom-cartier focus:outline-offset-2" tabIndex={1}>
                                     <Heading className="font-normal">{link.text}</Heading>
                                 </Link>
                             ))}
@@ -34,7 +34,7 @@ export const Footer = () => {
                         <Heading type="h4">{footerData.footerLinks[1].category}</Heading>
                         <ul className='flex flex-col gap-1 mt-6'>
                             {footerData.footerLinks[1].links.map((link, index) => (
-                                <Link key={index} to={link.link} className="focus:outline-custom-cartier focus:outline-offset-2">
+                                <Link key={index} to={link.link} className="focus:outline-custom-cartier focus:outline-offset-2" tabIndex={1}>
                                     <Heading className="font-normal">{link.text}</Heading>
                                 </Link>
                             ))}
@@ -44,7 +44,7 @@ export const Footer = () => {
                         <Heading type="h4">{footerData.footerLinks[2].category}</Heading>
                         <ul className='flex flex-col gap-1 mt-6'>
                             {footerData.footerLinks[2].links.map((link, index) => (
-                                <Link key={index} to={link.link} className="focus:outline-custom-cartier focus:outline-offset-2">
+                                <Link key={index} to={link.link} className="focus:outline-custom-cartier focus:outline-offset-2" tabIndex={1}>
                                     <Heading className="font-normal">{link.text}</Heading>
                                 </Link>
                             ))}
@@ -54,7 +54,7 @@ export const Footer = () => {
                         <Heading type="h4">{footerData.footerLinks[3].category}</Heading>
                         <ul className='flex flex-col gap-1 mt-6'>
                             {footerData.footerLinks[3].links.map((link, index) => (
-                                <Link key={index} to={link.link} className="focus:outline-custom-cartier focus:outline-offset-2">
+                                <Link key={index} to={link.link} className="focus:outline-custom-cartier focus:outline-offset-2" tabIndex={1}>
                                     <Heading className="font-normal">{link.text}</Heading>
                                 </Link>
                             ))}
@@ -66,22 +66,22 @@ export const Footer = () => {
             <nav className="bg-custom-dark-blue">
                 <ul className='flex flex-wrap md:flex-row items-center justify-center gap-6 py-6 text-white'>
                 <li>
-                        <Link to="/mentions">
+                        <Link to="/mentions" tabIndex={1}>
                             <Heading type="h5">Mentions légales</Heading>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/accessibilite">
+                        <Link to="/accessibilite" tabIndex={1}>
                             <Heading type="h5">Accessibilité</Heading>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/donnee-personnelles">
+                        <Link to="/donnee-personnelles" tabIndex={1}>
                             <Heading type="h5">Données personnelles</Heading>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/plan">
+                        <Link to="/plan" tabIndex={1}>
                             <Heading type="h5">Plan du site</Heading>
                         </Link>
                     </li>
