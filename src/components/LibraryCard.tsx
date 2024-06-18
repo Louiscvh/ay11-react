@@ -5,11 +5,11 @@ import { clsx } from "clsx";
 export const LibraryCard = ({ name, address, numberAvailable, location, className }: { name: string, address: string, numberAvailable: number, location: string, className?: string }) => {
     const available = () => {
         if (numberAvailable === 0) {
-            return <Heading className="text-custom-cartier">Indisponible</Heading>
+            return <Heading className="text-custom-cartier font-medium">Indisponible</Heading>
         } else if (numberAvailable === 1) {
-            return < Heading className="text-custom-green" >1 exemplaire disponible</Heading >
+            return <Heading className="text-custom-green font-medium" >1 exemplaire disponible</Heading >
         } else {
-            return <Heading className="text-custom-green">{numberAvailable} exemplaires disponibles</Heading>
+            return <Heading className="text-custom-green font-medium">{numberAvailable} exemplaires disponibles</Heading>
         }
     }
 
@@ -19,7 +19,7 @@ export const LibraryCard = ({ name, address, numberAvailable, location, classNam
                 <Heading type="h4" className='mt-2'>{name}</Heading>
                 <Heading>{address}</Heading>
                 <div className="mt-2 gap-1 flex flex-col">
-                    <Heading className="text-green-500">{available()}</Heading>
+                    {available()}
                     <Heading>{location}</Heading>
                     <Button className="w-fit p-4">Réserver</Button>
                 </div>

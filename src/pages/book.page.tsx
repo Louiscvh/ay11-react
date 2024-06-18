@@ -10,15 +10,14 @@ import { ReferenceCard } from "../components/ReferenceCard"
 
 
 export const Book = () => {
+
     const { id } = useParams()
     const bookData = booksData.books.find(book => book.id.toString() === id)
     const navigate = useNavigate()
     const errorMissingData = "Cette donnée est manquante, veuillez nous excuser pour le dérangement"
 
-    console.log(bookData)
-
-
     if (!bookData) navigate('/')
+
     return (
         <main className="container m-auto px-4 mt-16">
             <section className="flex justify-between">
