@@ -26,7 +26,7 @@ export const Book = () => {
 
     return (
         <main className="container m-auto px-4 mt-16">
-            <section className="flex justify-between relative">
+            <section className="flex flex-wrap justify-between gap-2 relative">
                 <nav aria-label="breadcrumb">
                     <ol className="flex gap-4 relative z-30">
                         <li>
@@ -144,9 +144,6 @@ export const Book = () => {
                         buttonText="Me connecter à mon compte"
                     />
                 </div>
-            </section>
-            <section className="my-16">
-                <SectionHeading3 title="Suggestions : ces références qui pourraient vous plaire" />
             </section>
         </main>
     );
