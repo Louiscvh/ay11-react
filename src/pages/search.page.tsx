@@ -2,7 +2,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Heading } from "../components/Heading.tsx";
 import { Button } from "../components/Button.tsx";
 import { Check, ChevronDown, Search as SearchIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { booksData } from "../data/book.data.ts";
 
 export const Search = () => {
@@ -21,6 +21,8 @@ export const Search = () => {
         event.preventDefault();
         navigate(`/search?search=${searchValue}`);
     };
+
+    const staticValue = useRef<string>(search).current;
 
     return (
         <main className="container mx-auto my-16 px-4">
@@ -54,7 +56,7 @@ export const Search = () => {
                         aria-label="Champ de recherche"
                     />
                 </div>
-                <Button>
+                <Button onClick={handleSearchSubmit}>
                     Rechercher
                 </Button>
             </form>
@@ -144,7 +146,7 @@ export const Search = () => {
                             />
                         </li>
                     )) : (
-                        <Heading type="h3">Aucun résultat trouvé pour "{searchValue}"</Heading>
+                        <Heading type="h3">Aucun résultat trouvé pour "{search}"</Heading>
                     )}
                 </ul>
             </section>
