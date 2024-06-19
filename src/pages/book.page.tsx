@@ -67,7 +67,7 @@ export const Book = () => {
                 </div>
                 <div className="flex flex-col gap-y-4">
                     <div className='flex justify-between items-center gap-8'>
-                        <Heading className="text-custom-cartier font-semibold">#BD</Heading>
+                        <Heading className="text-custom-cartier font-semibold">#LIVRE</Heading>
                         <div className="flex items-center gap-4">
                             <Heading>Lecture de la description</Heading>
                             <Button className="w-fit !p-2" aria-label="Play description">

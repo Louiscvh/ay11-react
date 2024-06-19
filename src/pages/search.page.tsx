@@ -2,7 +2,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { Heading } from "../components/Heading.tsx";
 import { Button } from "../components/Button.tsx";
 import { Check, ChevronDown, Search as SearchIcon } from "lucide-react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { booksData } from "../data/book.data.ts";
 
 export const Search = () => {
@@ -17,12 +17,12 @@ export const Search = () => {
         setResults(booksData.books.filter((book) => book.title.toLowerCase().includes(search.toLowerCase())));
     }, [search]);
 
+    const urlSearch = `/search?search=${searchValue}`
+
     const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        navigate(`/search?search=${searchValue}`);
+        navigate(urlSearch);
     };
-
-    const staticValue = useRef<string>(search).current;
 
     return (
         <main className="container mx-auto my-16 px-4">
@@ -56,7 +56,7 @@ export const Search = () => {
                         aria-label="Champ de recherche"
                     />
                 </div>
-                <Button onClick={handleSearchSubmit}>
+                <Button onClick={() => navigate(urlSearch)}>
                     Rechercher
                 </Button>
             </form>
@@ -146,7 +146,7 @@ export const Search = () => {
                             />
                         </li>
                     )) : (
-                        <Heading type="h3">Aucun résultat trouvé pour "{search}"</Heading>
+                            <Heading type="h3">Aucun résultat trouvé pour "{search}"</Heading>
                     )}
                 </ul>
             </section>
@@ -167,7 +167,7 @@ const ResultCard = ({ searchValue, id, title, author, cover, editor, date, numbe
             return (
                 <div className="flex items-center gap-2">
                     <Check className="text-custom-green" aria-hidden="true" />
-                    <Heading className="text-custom-green font-medium">Disponible dans {numberAvailable} librairies</Heading>
+                    <Heading className="text-custom-green font-medium">Disponible dans {numberAvailable} {numberAvailable > 1 ? "librairies" : "librairie"}</Heading>
                 </div>
             )
         }
