@@ -21,7 +21,7 @@ export const Home = () => {
         <main className="mt-16">
             <section className="container px-4 md:px-0 mx-auto relative flex flex-col gap-4">
                 <Heading type="h2">Recherche</Heading>
-                <form className="flex flex-col md:flex-row gap-4 relative z-10" onSubmit={() => navigate(urlSearch)}>
+                <form className="flex flex-col md:flex-row gap-4 relative z-10" onSubmit={() => search && navigate(urlSearch)}>
                     <div className="relative w-full">
                         <Search className="absolute left-4 top-[calc(50%-0px)] -translate-y-[50%]" />
                         <input
@@ -30,7 +30,7 @@ export const Home = () => {
                             onChange={(e) => setSearch(e.target.value)}
                             placeholder="Rechercher un livre, un article, une revue, un film ..." tabIndex={1}/>
                     </div>
-                    <Button onClick={() => navigate(urlSearch)}>
+                    <Button type="submit">
                         Rechercher
                     </Button>
                 </form>
