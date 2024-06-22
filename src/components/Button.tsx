@@ -10,7 +10,7 @@ export const Button = ({ children, variant, className, onClick, role, disabled, 
     }
 
     return (
-        <button disabled={disabled} tabIndex={disabled ? -1 : 1} className={clsx(disabled && "cursor-not-allowed opacity-55", className, buttonVariants[variant || "primary"], "py-3 px-6 bg-custom-dark-cartier text-white font-semibold focus:outline-2 focus:outline-custom-cartier focus:outline-offset-4")} onClick={onClick} type={type} role={role}>
+        <button disabled={disabled} tabIndex={disabled ? -1 : 1} className={clsx(disabled && "cursor-not-allowed opacity-55", className, buttonVariants[variant || "primary"], "py-3 px-6 bg-custom-dark-cartier hover:brightness-75 transition text-white font-semibold focus:outline-2 focus:outline-custom-cartier focus:outline-offset-4")} onClick={onClick} type={type} role={role}>
             {children}
         </button>
     )
