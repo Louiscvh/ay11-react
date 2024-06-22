@@ -26,10 +26,10 @@ export const Book = () => {
 
     return (
         <main className="container m-auto px-4 mt-16">
-            <section className="flex flex-wrap justify-between gap-2 relative">
+            <section className="flex flex-wrap justify-between gap-4 relative">
                 <nav aria-label="breadcrumb">
                     <ol className="flex gap-4 relative z-30">
-                        <li>
+                        <li className="flex items-center gap-4">
                             <Link to="/" tabIndex={1}>
                                 <button aria-label="Accueil">ACCUEIL</button>
                             </Link>
@@ -42,7 +42,7 @@ export const Book = () => {
                                 </Link>
                             ) : (
                                 <Link to={`/books/${id}`} tabIndex={1}>
-                                    <button className="font-semibold" aria-label={bookData?.title.toUpperCase()}>{bookData?.title.toUpperCase()}</button>
+                                    <button className="font-semibold text-left" aria-label={bookData?.title.toUpperCase()}>{bookData?.title.toUpperCase()}</button>
                                 </Link>
                             )}
                         </li>
