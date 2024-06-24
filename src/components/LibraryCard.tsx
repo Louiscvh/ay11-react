@@ -3,7 +3,7 @@ import { Heading } from "./Heading.tsx";
 import { clsx } from "clsx";
 import {Link} from "react-router-dom";
 
-export const LibraryCard = ({ name, address, numberAvailable, location, className }: { name: string, address: string, numberAvailable: number, location: string, className?: string }) => {
+export const LibraryCard = ({ id, name, address, numberAvailable, location, className, bookId }: { id: string, name: string, address: string, numberAvailable: number, location: string, className?: string, bookId: number }) => {
     const available = () => {
         if (numberAvailable === 0) {
             return <Heading className="text-custom-cartier font-medium">Indisponible</Heading>
@@ -22,7 +22,7 @@ export const LibraryCard = ({ name, address, numberAvailable, location, classNam
                 <div className="mt-2 gap-1 flex flex-col">
                     {available()}
                     <Heading>{location}</Heading>
-                    <Link to="/connexion">
+                    <Link to={`/confirm?library=${id}&book=${bookId}`}>
                         <Button disabled={numberAvailable === 0} className="w-fit p-4">Réserver</Button>
                     </Link>
                 </div>

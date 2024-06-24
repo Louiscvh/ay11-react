@@ -4,6 +4,7 @@ import { Button } from "../components/Button.tsx";
 import { Check, ChevronDown, Search as SearchIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { booksData } from "../data/book.data.ts";
+import { BookData } from "../types/book.type.ts";
 
 export const Search = () => {
     const [searchParams] = useSearchParams();

@@ -119,10 +119,12 @@ export const Book = () => {
                     {bookData?.library.sort((a, b) => b.numberAvailable - a.numberAvailable).map((library, index) => (
                         <li key={index}>
                             <LibraryCard
+                                id={library.id}
                                 name={library.name}
                                 address={library.address}
                                 numberAvailable={library.numberAvailable}
                                 location={library.location}
+                                bookId={bookData?.id}
                             />
                         </li>
                     ))}

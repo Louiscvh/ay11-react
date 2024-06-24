@@ -1,3 +1,5 @@
+import {BooksData} from "../types/book.type.ts";
+
 export const booksData: BooksData = {
   books: [
     {
@@ -18,18 +20,21 @@ export const booksData: BooksData = {
       cover: "/images/book-10.png",
       library: [
         {
+          id: "1",
           name: "Bibliothèque la Canopée",
           address: "10 Passage de la Canopée, 75001 Paris",
           numberAvailable: 0,
           location: "Niveau 2 Jeunesse",
         },
         {
+          id: "2",
           name: "Bibliothèque Françoise Sagan",
           address: "8 Rue Léon Schwartzenberg, 75010 Paris",
           numberAvailable: 2,
           location: "Niveau 2 Jeunesse",
         },
         {
+          id: "3",
           name: "Bibliothèque Violette Leduc",
           address: "170 Rue de Charonne, 75011 Paris",
           numberAvailable: 1,
@@ -55,12 +60,14 @@ export const booksData: BooksData = {
       cover: "/images/book-11.png",
       library: [
         {
+          id: "1",
           name: "Bibliothèque la Canopée",
           address: "10 Passage de la Canopée, 75001 Paris",
           numberAvailable: 3,
           location: "Niveau 2 Jeunesse",
         },
         {
+          id: "3",
           name: "Bibliothèque Violette Leduc",
           address: "170 Rue de Charonne, 75011 Paris",
           numberAvailable: 0,
@@ -86,6 +93,7 @@ export const booksData: BooksData = {
       cover: "/images/chaperon-woolvin.jpg",
       library: [
         {
+          id: "4",
           name: "Bibliothèque BPI",
           address: "25 Rue de la Bibliothèque, 75001 Paris",
           numberAvailable: 3,
@@ -111,12 +119,14 @@ export const booksData: BooksData = {
       cover: "/images/book-12.png",
       library: [
         {
+          id: "1",
           name: "Bibliothèque la Canopée",
           address: "10 Passage de la Canopée, 75001 Paris",
           numberAvailable: 3,
           location: "Niveau 2 Jeunesse",
         },
         {
+          id: "3",
           name: "Bibliothèque Violette Leduc",
           address: "170 Rue de Charonne, 75011 Paris",
           numberAvailable: 3,

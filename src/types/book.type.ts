@@ -1,4 +1,4 @@
-type BookData = {
+export type BookData = {
   id: number;
   title: string;
   resume: string;
@@ -14,6 +14,7 @@ type BookData = {
   };
   cover: string;
   library: {
+    id: string;
     name: string;
     address: string;
     numberAvailable: number;
@@ -21,6 +22,6 @@ type BookData = {
   }[];
 };
 
-type BooksData = {
+export type BooksData = {
   books: BookData[];
 };

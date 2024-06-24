@@ -14,11 +14,12 @@ export const Header = () => {
     return (
         <header className="bg-custom-pink m:py-4 relative z-30">
             <div
-                className={clsx(isMenuOpen ? "translate-x-[0%]" : 'translate-x-[100%]', "transition h-screen p-4 w-screen bg-white fixed top-0 left-0 z-20")}>
-                <Link to="/" tabIndex={1} className="cursor-pointer focus:outline-custom-cartier focus:outline-offset-4 md:hidden absolute right-4 top-5" onClick={() => setIsMenuOpen((prev) => !prev)}>
+                tabIndex={0}
+                className={clsx(isMenuOpen ? "translate-x-[0%]" : 'translate-x-[100%]', "md:hidden transition h-screen p-4 w-screen bg-white fixed top-0 left-0 z-20")}>
+                <Link to="/" tabIndex={0} className="cursor-pointer md:hidden absolute right-4 top-5" onClick={() => setIsMenuOpen((prev) => !prev)}>
                     <Menu />
                 </Link>
-                <div className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] flex flex-col items-center">
+                <div tabIndex={0} className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] flex flex-col items-center">
                     <ul className="flex md:flex-row gap-8">
                         {headerData.languages.map((lang, index) => (
                             <li key={index} onClick={() => setSelectedLang(lang)}
@@ -76,10 +77,10 @@ export const Header = () => {
                 </div>
                 <div className='flex justify-between items-start lg:items-center flex-col lg:gap-12 lg:flex-row overflow-hidden'>
                     <div className="flex justify-between items-center w-full md:w-fit">
-                        <Link to="/" tabIndex={1}>
+                        <Link to="/" tabIndex={1} className="focus:outline-custom-cartier focus:outline-offset-2 m-1">
                             <img src="/images/logo-biblio.png" alt="Logo de la bibiliothèque de Paris" className="h-16 object-contain"/>
                         </Link>
-                        <Link to="/" className="focus:outline-custom-cartier focus:outline-offset-4" tabIndex={1} onClick={() => setIsMenuOpen((prev) => !prev)}>
+                        <Link to="/" className="focus:outline-custom-cartier focus:outline-offset-4" tabIndex={0} onClick={() => setIsMenuOpen((prev) => !prev)}>
                             <Menu className="md:hidden " />
                         </Link>
                     </div>
