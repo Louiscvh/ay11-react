@@ -15,7 +15,7 @@ export const Confirm = () => {
 
     return (
         <main className="container m-auto px-4 mt-16">
-            <section>
+            <section className="relative">
                 <nav aria-label="breadcrumb">
                     <ol className="flex gap-4 relative z-30">
                         <li className="flex items-center gap-4">
@@ -23,16 +23,22 @@ export const Confirm = () => {
                                 <button aria-label="Accueil">ACCUEIL</button>
                             </Link>
                         </li>
-                        <li aria-current="page" className="flex items-center gap-4">
+                        <li className="flex items-center gap-4">
                             <Heading>{'>'}</Heading>
                             <Link to={`/books/${bookData?.id}`} tabIndex={1}>
-                                <button className="font-semibold text-left"
+                                <button className="text-left"
                                         aria-label={bookData?.title.toUpperCase()}>{bookData?.title.toUpperCase()}</button>
                             </Link>
-
+                        </li>
+                        <li aria-current="page" className="flex items-center gap-4">
+                            <Heading>{'>'}</Heading>
+                            <Heading className="font-semibold">CONFIRMATION</Heading>
                         </li>
                     </ol>
                 </nav>
+                <img src="/images/background-logo.svg"
+                     className="size-72 -z-0 absolute top-[50%] -left-8 translate-y-[-50%]"
+                     alt="Background logo pour la section recherche"/>
             </section>
             <SectionHeading title="CONFIRMER MA RÉSERVATION" desc="Merci pour votre achat" className="my-12"/>
             <section className="mb-12">
