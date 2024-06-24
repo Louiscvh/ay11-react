@@ -6,6 +6,7 @@ import {Footer} from "./components/Footer.tsx";
 import {Search} from "./pages/search.page.tsx";
 import {Connexion} from "./pages/connexion.page.tsx";
 import {Confirm} from "./pages/confirm.page.tsx";
+import { Booked } from "./pages/booked.page.tsx";
 
 export const App = () => {
   return (
@@ -18,6 +19,7 @@ export const App = () => {
                 <Route path="/search" element={<Search/>}/>
                 <Route path="/connexion" element={<Connexion/>}/>
                 <Route path="/confirm" element={<Confirm/>}/>
+                <Route path="/confirmed" element={<Booked/>}/>
             </Routes>
             <Footer/>
         </Router>
