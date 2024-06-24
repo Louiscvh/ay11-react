@@ -5,7 +5,7 @@ import { Heading } from "../components/Heading";
 import { Button } from "../components/Button";
 import { useEffect } from "react";
 
-export const Booked = () => {
+export const Confirmed = () => {
     const { id } = useParams();
     const bookData = booksData.books.find(book => book.id.toString() === id);
     const libraryData = "in progress..."
