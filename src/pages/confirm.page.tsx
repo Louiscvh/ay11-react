@@ -3,6 +3,7 @@ import {Link, useSearchParams} from "react-router-dom";
 import {Heading} from "../components/Heading.tsx";
 import {booksData} from "../data/book.data.ts";
 import {Button} from "../components/Button.tsx";
+import { useEffect } from "react";
 
 export const Confirm = () => {
 
@@ -12,6 +13,10 @@ export const Confirm = () => {
 
     const bookData = booksData.books.filter(book => book.id.toString() === bookId)[0];
     const libraryData = booksData?.books.filter(book => book.id.toString() === bookId)[0]?.library.filter(library => library.id === libraryId)[0];
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <main className="container m-auto px-4 mt-16">
