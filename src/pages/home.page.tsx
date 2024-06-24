@@ -25,6 +25,7 @@ export const Home = () => {
                     <div className="relative w-full">
                         <Search className="absolute left-4 top-[calc(50%-0px)] -translate-y-[50%]" />
                         <input
+                            required
                             className="bg-[#F2F2F2] w-full  pl-12 p-3 border-[1px] border-[#0F172A] focus:outline-custom-cartier focus:outline-offset-4"
                             type="text"
                             onChange={(e) => setSearch(e.target.value)}
