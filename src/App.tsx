@@ -7,6 +7,7 @@ import {Search} from "./pages/search.page.tsx";
 import {Connexion} from "./pages/connexion.page.tsx";
 import {Confirm} from "./pages/confirm.page.tsx";
 import { Booked } from "./pages/booked.page.tsx";
+import { Error404 } from "./pages/error404.page.tsx";
 
 export const App = () => {
   return (
@@ -20,6 +21,7 @@ export const App = () => {
                 <Route path="/connexion" element={<Connexion/>}/>
                 <Route path="/confirm" element={<Confirm/>}/>
                 <Route path="/confirmed" element={<Booked/>}/>
+                <Route path="/*" element={<Error404/>}/>
             </Routes>
             <Footer/>
         </Router>
