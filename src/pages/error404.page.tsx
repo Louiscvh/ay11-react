@@ -1,7 +1,6 @@
 
 import { SectionHeading } from "../components/SectionHeading";
-import { booksData } from "../data/book.data";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Heading } from "../components/Heading";
 import { Button } from "../components/Button";
 import { useEffect } from "react";
